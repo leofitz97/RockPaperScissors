@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+    <body>
+        <script>
+            function computerPlay(){
+                let score =  Math.floor(Math.random(1)*3)
+                if (score ===0){
+                    return "rock"
+                }    
+                else if (score===1){
+                    return "paper"
+                }
+                else if (score==2){
+                    return "scissors"
+                }
+            }
+            function playRound(player1, computer){
+                if (player1==='rock' && computer =='scissors'){
+                    let won = "You win! rock beats scissors"
+                    return won
+                }
+                if (player1=== 'rock' && computer==='paper'){
+                    let lose = "You lose! paper beats rock"
+                    return lose
+                }
+                if (player1=='paper' && computer=='scissors'){
+                    let lose = "You lose! scissors beats paper"
+                    return lose
+                }
+                if (player1=='paper' && computer=='rock'){
+                    let won = "You win! paper beats rock"
+                    return won
+                }
+                if (player1=='scissors' && computer=='rock'){
+                    let lose = "You lose! rock beats scissors"
+                    return lose
+                }
+                if (player1==='scissors' && computer=='paper'){
+                    let won = "You win! scissors beats paper"
+                    return won
+                }
+                else{
+                    return "It was a fair draw, repeat game..."
+                }
+            }
+            function game(){
+                let count = 0
+                let final = 5
+                let score=0
+                let won=0
+                let round = 1
+                let lose =0
+                p1 = prompt("Rock Paper Scissor game! type which one you want to play!")
+                p1 = p1.toLowerCase()
+                do{
+                    console.log("Round "+ round)
+                    score = playRound(p1, computerPlay())
+                    if (score.includes("win!", 4)){
+                        won++}
+                    if (score.includes("lose!")){
+                        lose++}    
+                    console.log(score)
+                    count++
+                    round++
+                }
+                while(count<final)
+                if (won>lose){console.log("Great! you won the game with "+won+" wins!")}
+                else{console.log("Sorry, you lost! Better luck next time!")}
+            }  
+            game()
+        </script>
+    </body>
+</html>
