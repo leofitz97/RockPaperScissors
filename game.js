@@ -88,3 +88,26 @@ scissor.addEventListener('click', ()=>{
 	}
 })
 
+function sockMerchant(n, ar) {
+	// Write your code here
+	let pair1=10;
+	let pair2=20;
+	let pair3=30;
+	let freq1=0;
+	let freq2=0;
+	let freq3=0;
+	let freq =0;
+	let i;
+	let j;
+	
+		for (i in ar){
+			j= i+1
+			if (ar[i] ==ar[1]){console.log(ar[i], ar[i+1])}
+		}
+	
+}
+let ar = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+let arr = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3]
+a = sockMerchant(10, arr)
+
+
